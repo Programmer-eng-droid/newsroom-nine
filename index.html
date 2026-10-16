@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Newsroom Nine</title>
+  <meta name="description" content="Newsroom Nine: nine minutes, one claim, your call. A newsroom verification game.">
+  <meta name="theme-color" content="#14213d">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">Newsroom Nine</div>
+    <div class="top-right">
+      <span id="status"></span>
+      <button id="install" class="btn small" hidden>Install app</button>
+    </div>
+  </header>
+
+  <main id="app" tabindex="-1" aria-live="polite">
+    <noscript><p class="card">Newsroom Nine needs JavaScript to run. Please turn it on in your browser.</p></noscript>
+    <p class="muted">Loading…</p>
+  </main>
+
+  <footer>
+    <p id="ios-tip" hidden>On iPhone or iPad: tap the Share button, then “Add to Home Screen” to install.</p>
+    <p>Practice scenarios are fictional. Places, people and organisations are invented. No personal data is collected; your best score is kept only on this device.</p>
+  </footer>
+
+  <script src="game.js" defer></script>
+</body>
+</html>

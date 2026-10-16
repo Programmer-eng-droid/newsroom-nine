@@ -1,0 +1,151 @@
+{
+  "id": "flood-photo",
+  "title": "The bridge photo",
+  "fictional": true,
+  "claim": "URGENT!!! Riverbend Bridge has COLLAPSED after last night's floods. Many people trapped. Share before they delete this!!",
+  "claimSource": "Forwarded in a WhatsApp group, then spotted on three social accounts. A rival outlet has just shared it.",
+  "briefing": "It is late afternoon. A photo of a collapsed bridge is spreading fast and your next news slot is at 18:00. You cannot check everything. Choose what to check, work out what each result really proves, then decide what goes out.",
+  "proofNeeded": 2,
+  "checks": [
+    {
+      "id": "reverse",
+      "label": "Reverse image search",
+      "desc": "Run the photo through reverse image search to find where else it has appeared.",
+      "hint": "Recycled photos are the most common trick, and this check is quick.",
+      "cost": 2,
+      "essential": true,
+      "strength": "proves",
+      "result": "The same picture appears on a foreign news site and a photo library, dated 2021. It was captioned as flooding in another country.",
+      "why": "A dated original that predates the claim is strong, checkable evidence that the photo is recycled."
+    },
+    {
+      "id": "authority",
+      "label": "Call the road authority press office",
+      "desc": "Ask the body responsible for the bridge whether it has collapsed, and ask for a named, on-the-record answer.",
+      "hint": "Go to the people responsible, and get the answer attributed to a named person.",
+      "cost": 3,
+      "essential": true,
+      "strength": "proves",
+      "result": "A named officer says there is no collapse. Engineers inspected the bridge this morning and it is open, with one lane restricted because of high water.",
+      "why": "The body responsible answered directly on the exact claim and will stand behind it. It is also your right of reply."
+    },
+    {
+      "id": "geolocate",
+      "label": "Geolocate the photo",
+      "desc": "Compare signs, traffic, terrain and the riverbank in the photo with the real bridge.",
+      "hint": "Look for details in the picture that you can test against the real place.",
+      "cost": 3,
+      "essential": false,
+      "strength": "proves",
+      "result": "Road signs are in a language not used in this district, traffic keeps to the opposite side of the road, and the riverbank does not match the real bridge.",
+      "why": "Several independent details in the image contradict the claimed location, which is strong evidence."
+    },
+    {
+      "id": "account",
+      "label": "Check the first account that posted it",
+      "desc": "Look at when the account was created, who follows it and what it usually posts.",
+      "hint": "A suspicious account is a flag, not a verdict.",
+      "cost": 1,
+      "essential": false,
+      "strength": "suggests",
+      "result": "The account was created three days ago, has 40 followers and only posts forwarded images.",
+      "why": "A brand-new account is a warning sign, but real events are also posted by new accounts. It points somewhere without proving anything."
+    },
+    {
+      "id": "outlets",
+      "label": "Search other outlets, police and wires",
+      "desc": "See whether anyone credible has reported a collapse.",
+      "hint": "No reports is a pointer, not proof. A story can break before anyone writes it up.",
+      "cost": 2,
+      "essential": false,
+      "strength": "suggests",
+      "result": "No other outlet, police statement or wire report mentions a collapse.",
+      "why": "Silence from others fits a false claim, but it also fits a very new real event. Treat it as supporting, not conclusive."
+    },
+    {
+      "id": "resident",
+      "label": "Phone a resident near the bridge",
+      "desc": "Ask someone on the ground what they can see right now.",
+      "hint": "One witness is useful but only one source.",
+      "cost": 3,
+      "essential": false,
+      "strength": "suggests",
+      "result": "A resident says the river is high and people are nervous, but the bridge is standing.",
+      "why": "A single eyewitness helps, but one source who may also have heard the rumour is not enough on its own."
+    },
+    {
+      "id": "metadata",
+      "label": "Read the photo's metadata",
+      "desc": "Look for camera data, a date or GPS coordinates inside the image file.",
+      "hint": "Messaging apps often strip this data.",
+      "cost": 1,
+      "essential": false,
+      "lowValue": true,
+      "strength": "none",
+      "result": "The file has no camera data, date or location. The messaging app stripped it all.",
+      "why": "Missing metadata proves nothing either way. Most shared images lose it, so this check rarely helps with forwards."
+    },
+    {
+      "id": "poster",
+      "label": "Message the original poster for their source",
+      "desc": "Ask where they got the photo and whether they took it.",
+      "hint": "Good practice, but it can eat your clock. Do it alongside other checks, not instead of them.",
+      "cost": 2,
+      "essential": false,
+      "lowValue": true,
+      "strength": "none",
+      "result": "No reply before your deadline. You spent the time waiting.",
+      "why": "Contacting the source is worth doing, but you cannot count on a reply under deadline. Send the message and keep working."
+    }
+  ],
+  "reflect": {
+    "title": "Check yourself",
+    "prompt": "The photo is alarming. A rival has just shared it, and someone on your team says “we can’t be last on this.” What do you do?",
+    "options": [
+      { "id": "crowd", "label": "Go with the crowd: if everyone has it, it must be real.", "points": 0, "explain": "Popularity is not verification. Many people sharing a photo often means one false post copied many times." },
+      { "id": "gut", "label": "Trust my gut: it looks real to me.", "points": 20, "explain": "A convincing look is exactly what good fakes and recycled photos have. Gut feeling is a reason to check, not a reason to publish." },
+      { "id": "pause", "label": "Notice the pressure and my own reaction, and decide on evidence, not on being first.", "points": 100, "explain": "Naming the pressure and the emotion before deciding is the habit that stops you amplifying a falsehood." },
+      { "id": "challenge", "label": "Ask a colleague to challenge my assumptions before I decide.", "points": 85, "explain": "A second pair of eyes catches bias well. It scores slightly lower here only because the clock leaves little time for it." }
+    ]
+  },
+  "create": {
+    "title": "Write the line",
+    "prompt": "What do you put out? Choose the wording that fits what you actually know.",
+    "options": [
+      { "id": "breaking", "label": "BREAKING: Bridge collapses in flooding. Pictures from social media show the damage.", "points": { "thin": 0, "solid": 0 }, "explain": "This amplifies an unverified claim and spreads the photo even further." },
+      { "id": "holding", "label": "We are aware of an image circulating and are checking it with the authorities.", "points": { "thin": 70, "solid": 40 }, "explain": "A holding line is reasonable while evidence is thin. Once you hold strong evidence it undersells what you know." },
+      { "id": "debunk", "label": "No collapse: the viral bridge photo is from a 2021 flood abroad, and the road authority says the bridge is open.", "points": { "thin": 20, "solid": 100 }, "explain": "A clear correction that names the evidence and the authority is the strongest line, but only if you really hold that evidence." },
+      { "id": "silence", "label": "Say nothing. It is just a rumour.", "points": { "thin": 20, "solid": 10 }, "explain": "The rumour is already spreading and people may act on it. Silence leaves the false version unchallenged." }
+    ]
+  },
+  "act": {
+    "title": "Decide and act",
+    "prompt": "It is nearly 18:00. What do you do?",
+    "options": [
+      { "id": "publish", "label": "Run the photo as breaking news.", "points": { "thin": 0, "solid": 0 }, "explain": "Publishing an unverified image under your name puts your credibility behind it." },
+      { "id": "hold", "label": "Hold: no item this slot, and keep verifying for the next one.", "points": { "thin": 90, "solid": 40 }, "explain": "Holding is the right call when evidence is thin. With strong evidence in hand, holding wastes the chance to correct the record." },
+      { "id": "correct", "label": "Publish a correction with the authority’s named comment, and explain how people can check images like this.", "points": { "thin": 20, "solid": 100 }, "explain": "Publishing the correction, with the right of reply included, serves the audience, provided your evidence is solid." },
+      { "id": "forward", "label": "Forward the photo to colleagues and ask what they think.", "points": { "thin": 10, "solid": 10 }, "explain": "That spreads the unverified photo further without moving you toward a decision." }
+    ]
+  },
+  "tells": [
+    "The photo arrived with no original source, date or location.",
+    "The message used urgent, emotional wording and begged to be shared before it was “deleted”.",
+    "The first account to post it was brand new and only forwarded images.",
+    "A rival sharing it felt like pressure to follow, but that is not evidence.",
+    "Details in the picture (signs, traffic side, riverbank) did not match the place."
+  ],
+  "tools": [
+    { "name": "TinEye", "url": "https://tineye.com", "use": "Reverse image search to find earlier copies of a photo." },
+    { "name": "Google Lens", "url": "https://lens.google.com", "use": "Reverse image search and object matching from a phone." },
+    { "name": "Google Earth", "url": "https://earth.google.com", "use": "Check terrain, bridges and landmarks against a photo." },
+    { "name": "Africa Check", "url": "https://africacheck.org", "use": "See whether a claim has already been checked." },
+    { "name": "InVID-WeVerify", "url": "", "use": "Browser plugin for checking video frames and images." }
+  ],
+  "mediumNotes": {
+    "print": "Whatever you decide runs on tomorrow’s front page and the website.",
+    "tv": "Whatever you decide goes into the 18:00 TV bulletin.",
+    "radio": "Whatever you decide is read out in the 18:00 radio news.",
+    "online": "Whatever you decide is posted on the website and social accounts."
+  }
+}
